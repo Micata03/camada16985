@@ -1,11 +1,19 @@
 import React from 'react'
-import ItemCount from '../ItemCount/ItemCount'
+
+import ItemList from '../ItemList/ItemList'
+import productos from '../../data';
 
 export default function ItemListContainer({greetings}) {
+
+    
     return (
-        <div>
-            <h1>{greetings}</h1>
-            <ItemCount stock={4} inicial = {1}/>
+        <div >
+            <article className="hero-image">
+            
+            </article>
+            <h1 className="hero-text">{greetings}</h1>
+            <ItemList productos ={productos}/>
+            
         </div>
     )
 }
