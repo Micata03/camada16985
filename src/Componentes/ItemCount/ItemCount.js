@@ -7,11 +7,15 @@ function ItemCount({inicial, stock, name}) {
 
     const add =(cantidad)=>{
         setCount(count + cantidad)
-       
+            
         
-        //if(stock < cantidad){
-           // alert('No hay stock')
-        //}
+       
+
+    }
+    const rest =(cantidad)=>{
+        setCount(count - cantidad)      
+             
+       
 
     }
 
@@ -23,14 +27,14 @@ function ItemCount({inicial, stock, name}) {
     return (
         <>
         <div className="container">
-            <button className="btn btn-dark mx-3"  onClick={() => add(-1)}
+            <button className="btn btn-dark mx-3"  onClick={() => rest(1)}
             disabled={count === inicial? true : null}
             
             
             >-</button>
             <button className="btn btn-light">{count}</button>
             
-            <button className="btn btn-dark mx-3"  onClick={() => add(+1)}
+            <button className="btn btn-dark mx-3"  onClick={() => add(1)}
             disabled={count === stock? true : null}
             
             >+</button>
