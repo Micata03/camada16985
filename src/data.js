@@ -67,7 +67,7 @@ const productos = [
     {
         id: 8,
         name: 'Almendras',
-        category : 'frutos secos',
+        category : 'frutossecos',
         price : 38.99,
         img: 'https://cdn.pixabay.com/photo/2016/10/25/12/56/almonds-1768792_960_720.jpg',
         desc: `Almendras tostadas 500gr`,
@@ -76,7 +76,7 @@ const productos = [
     {
         id: 9,
         name: 'Nueces',
-        category : 'frutos secos',
+        category : 'frutossecos',
         price : 28.99,
         img: 'https://cdn.pixabay.com/photo/2014/12/01/16/30/walnuts-552975_960_720.jpg',
         desc: `Nueces con cascara 500gr`,
@@ -85,7 +85,7 @@ const productos = [
     {
         id: 10,
         name: 'Avellanas',
-        category : 'frutos secos',
+        category : 'frutossecos',
         price : 48.99,
         img: 'https://cdn.pixabay.com/photo/2016/10/01/14/00/hazelnuts-1707601_960_720.jpg',
         desc: `Avellanas tostadas 500gr`,
