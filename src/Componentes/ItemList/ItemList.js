@@ -3,10 +3,18 @@ import Item from '../Item/Item'
 import Loading from '../Loading'
 
 
+
+
+
+
 function ItemList({productos, id}) {
+
+    
 
     const [loading, setLoading] = useState(true)
     const [producto, setProducto] = useState([])
+    
+   
 
      useEffect(() =>{
         setTimeout(() =>{
@@ -16,23 +24,30 @@ function ItemList({productos, id}) {
         
         if(!id){
                 setProducto(productos)
+
             }
             else{
                 setProducto(productos.filter(prod=>prod.category === id))
-            }
+            } 
+            
+            
+
 
      }, [id])   
-
-
+     
+    
     return (
+        <section>
+           
         <div className="section-center">
-
+            
             {loading? <Loading/> : producto.map (producto => <Item key={producto.id} producto ={producto}/> )}
 
             
             
             
         </div>
+        </section>
     )
 }
 
