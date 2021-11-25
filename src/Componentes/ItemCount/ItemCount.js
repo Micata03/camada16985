@@ -1,31 +1,19 @@
-import React, {useState} from 'react'
+import React from 'react'
 
-function ItemCount({inicial, stock, name}) {
+function ItemCount({max, setCantidad, cantidad, onAdd}) {
 
-    const [count, setCount] = useState(inicial)
+   
     
 
     const add = () => {
 
-        if(stock > count){
-            setCount(count + 1) 
-        }else{
-            alert('No hay stock')
-        }
+        cantidad < max && setCantidad(cantidad + 1)
     }    
     const rest = () => {
        
-        if( count >1){
-           setCount(count - 1) 
-        }
-        else{
-            alert('Debes agregar al menos uno')
-        }
+        cantidad > 0 && setCantidad(cantidad - 1)
     }        
-    const onAdd =(cantidad)=>{
-        alert(`Agregaste ${cantidad} de ${name} al carrito`)
-
-    }
+  
     
     return (
         <>
@@ -35,7 +23,7 @@ function ItemCount({inicial, stock, name}) {
             
             
             >-</button>
-            <button className="btn btn-light">{count}</button>
+            <button className="btn btn-light">{cantidad}</button>
             
             <button className="btn btn-dark mx-3"  onClick={add}
             //disabled={count === stock? true : null}
@@ -44,7 +32,7 @@ function ItemCount({inicial, stock, name}) {
             
         </div>
         <div className="container">
-            <button className="btn btn-dark mt-2" onClick={()=> onAdd(count)}>Agregar al carrito</button>
+            <button className="btn btn-dark mt-2" onClick={onAdd}>Agregar al carrito</button>
 
         </div>
         </>

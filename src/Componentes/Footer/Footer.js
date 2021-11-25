@@ -19,8 +19,8 @@ function Footer() {
         })}
       </ul>
       </div>
-      <small className="signature">
-          <a href="https://www.linkedin.com/in/micaela-tavasci-911442119/" target='_blanck'>Micaela Tavasci</a></small>
+      <small className="signature ">
+          <a href="https://www.linkedin.com/in/micaela-tavasci-911442119/" target='_blanck' >Micaela Tavasci</a></small>
             
         </footer>
         

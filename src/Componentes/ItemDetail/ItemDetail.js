@@ -1,11 +1,25 @@
-import React from 'react'
+import React, {useContext, useState} from 'react'
 import {Link} from 'react-router-dom'
 import ItemCount from '../ItemCount/ItemCount'
-
+import {CartContext}  from '../Context/CartContext'
 
 function ItemDetail({id, name, category, price, desc, img, stock}) {
 
-   
+    const {agregarAlCarrito, isInCart} = useContext(CartContext)
+
+    const [cantidad, setCantidad] = useState(0)
+
+    const handleAgregar = () => {
+        if (cantidad > 0) {
+            agregarAlCarrito({
+                id,
+                name,
+                price,
+                img,
+                cantidad
+            })
+        }   
+    }
 
     return (
        <section className=" section item-section">
@@ -33,8 +47,18 @@ function ItemDetail({id, name, category, price, desc, img, stock}) {
            </div>
              </div>
              
-             <ItemCount stock={stock} inicial = {1} name={name}/>
-             <Link to="/" className="btn btn-dark my-2 ">volver</Link>
+             {
+                !isInCart(id)
+                    ?   <ItemCount 
+                            max={stock} 
+                            cantidad={cantidad} 
+                            setCantidad={setCantidad}
+                            onAdd={handleAgregar}
+                        />
+                    :   <Link to="/cart" className="btn btn-dark ">Terminar mi compra</Link>
+            }
+
+             <Link to="/" className="btn btn-dark mx-2 my-2 ">volver</Link>
 
 
        </section>
