@@ -20,13 +20,19 @@ function NavBar() {
           <Link to="/" className="nav-link">Home</Link>
         </li>
         <li className="nav-item">
-          <Link to="/" className="nav-link">Nosotros</Link>
+          <Link to="/nosotros" className="nav-link">Nosotros</Link>
         </li>
         <li className="nav-item">
           <Link to="/" className="nav-link">Contacto</Link>
         </li>
         
-       <li className="nav-item" className="nav-link"><CartWidget/></li>        
+       <li className="nav-item" >
+         <Link to="/cart" className="nav-link">
+           
+            <CartWidget/>  
+
+         </Link>
+            </li>   
         
         
         

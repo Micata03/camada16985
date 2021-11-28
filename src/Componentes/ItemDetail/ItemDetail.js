@@ -16,7 +16,8 @@ function ItemDetail({id, name, category, price, desc, img, stock}) {
                 name,
                 price,
                 img,
-                cantidad
+                cantidad,
+                stock
             })
         }   
     }
@@ -54,6 +55,7 @@ function ItemDetail({id, name, category, price, desc, img, stock}) {
                             cantidad={cantidad} 
                             setCantidad={setCantidad}
                             onAdd={handleAgregar}
+                            id={id}
                         />
                     :   <Link to="/cart" className="btn btn-dark ">Terminar mi compra</Link>
             }

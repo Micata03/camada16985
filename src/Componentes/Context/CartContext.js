@@ -6,14 +6,51 @@ export const CartContext = createContext()
 export const CartProvider = ( {children} ) => {
 
     const [carrito, setCarrito] = useState([])
+   
 
     const agregarAlCarrito = (item) => {
       setCarrito( [...carrito, item] )
     }
-  
+
+    console.log(carrito)
+
+    
     const removerDelCarrito = (id) => {
       setCarrito( carrito.filter(prod => prod.id !== id ) )
     }
+    const addCantidadProducto = (id) => {
+             
+      let x = carrito.findIndex(prod => prod.id === id )
+      let newCart =[...carrito]
+      
+      newCart[x].cantidad < newCart[x].stock ? 
+      newCart[x].cantidad = newCart[x].cantidad + 1 :
+      alert('No hay stock');
+    
+        
+      
+      
+      setCarrito(newCart)   
+      
+      
+      
+      
+              
+              } 
+
+    const restCantidadProducto = (id) => {
+             
+      let x = carrito.findIndex(prod => prod.id === id )
+      let newCart =[...carrito]
+      
+      newCart[x].cantidad > 0?
+        newCart[x].cantidad = newCart[x].cantidad - 1:
+        console.log('no se puede')
+      setCarrito(newCart)
+      
+      
+              
+              } 
   
     const vaciarCarrito = () => {
       setCarrito([])
@@ -24,9 +61,11 @@ export const CartProvider = ( {children} ) => {
     }
 
     const totalCompra = () => {
-        let totales =parseFloat(carrito.reduce((acc, prod) => acc + prod.price * prod.cantidad, 0))
+
+      let totales = carrito.reduce((acc, prod) => acc + prod.price * prod.cantidad, 0)
         
-       return totales
+        
+       return totales.toFixed(2);
     }
   
     const isInCart = (id) => {
@@ -43,7 +82,10 @@ export const CartProvider = ( {children} ) => {
             vaciarCarrito,
             totalCantidad,
             isInCart,
-            totalCompra
+            totalCompra,
+            addCantidadProducto,
+            restCantidadProducto
+          
         }}>
             {children}
         </CartContext.Provider>

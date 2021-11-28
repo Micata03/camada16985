@@ -1,13 +1,20 @@
 import React from 'react'
 
-function ItemCount({max, setCantidad, cantidad, onAdd}) {
+
+function ItemCount({max, id, setCantidad, cantidad, onAdd}) {
 
    
     
 
     const add = () => {
 
-        cantidad < max && setCantidad(cantidad + 1)
+        if(cantidad < max){
+            setCantidad(cantidad + 1);
+           
+
+        }
+
+        //cantidad < max && 
     }    
     const rest = () => {
        

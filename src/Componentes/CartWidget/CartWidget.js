@@ -5,14 +5,20 @@ import {FaShoppingCart} from 'react-icons/fa'
 
 
 
+
 export default function CartWidget() {
     const {totalCantidad} = useContext(CartContext)
 
     return (
       <div className="cartWidget">
+
+          
+            <FaShoppingCart/>
+                    <span >{totalCantidad()}</span>
+
+         
             
-           <FaShoppingCart/>
-           <span className="bg-light">{totalCantidad}</span>
+           
        </div>     
        
     )
