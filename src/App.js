@@ -8,11 +8,15 @@ import ItemDetailContainer from './Componentes/ItemDetailContainer/ItemDetailCon
 import { CartProvider } from './Componentes/Context/CartContext';
 import { CartContainer } from './Componentes/CartContainer/CartContainer';
 import Nosotros from './Componentes/Nosotros';
+import { AppProvider } from './Componentes/Context/SideCartContext';
+import SideCart from './Componentes/SideCart/SideCart'
 
 function App() {
   return (
 
     <CartProvider>
+      <AppProvider>
+     
      <BrowserRouter className="container">
         <NavBar/>
       <Routes> 
@@ -30,6 +34,7 @@ function App() {
 
 
       </Routes> 
+      <SideCart/>
 
       <Footer/>
       
@@ -38,6 +43,7 @@ function App() {
     
     
     </BrowserRouter>
+    </AppProvider>
     </CartProvider>
   );
 }

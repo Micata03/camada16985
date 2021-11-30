@@ -1,11 +1,14 @@
 import React from 'react'
 import CartWidget from './CartWidget/CartWidget'
 import {Link} from 'react-router-dom'
+import {useGlobalContext} from './Context/SideCartContext'
 
 
 
 
 function NavBar() {
+
+  const { openSidebar } = useGlobalContext();
     return (
         <div>
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -26,14 +29,8 @@ function NavBar() {
           <Link to="/" className="nav-link">Contacto</Link>
         </li>
         
-       <li className="nav-item" >
-         <Link to="/cart" className="nav-link">
-           
-            <CartWidget/>  
-
-         </Link>
-            </li>   
         
+            <li  className="nav-item"><CartWidget boton={openSidebar}/></li>  
         
         
       </ul>
