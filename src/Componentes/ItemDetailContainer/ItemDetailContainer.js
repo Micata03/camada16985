@@ -1,8 +1,10 @@
 import React, {useState, useEffect} from 'react'
 import ItemDetail from '../ItemDetail/ItemDetail'
-import productos from '../../data';
+//import productos from '../../data';
 import Loading from '../Loading';
 import {useParams} from 'react-router-dom'
+import {doc, getDoc, query, where} from 'firebase/firestore/lite';
+import {db} from '../firebase/config'
 
 function ItemDetailContainer() {
 
@@ -12,10 +14,19 @@ function ItemDetailContainer() {
     const {prodId} = useParams()
 
      useEffect(()=>{
-         setLoading(true)
-        setItem(productos.find(prod => prod.id === Number(prodId) ))
-        setLoading(false)
-     },[])   
+        setLoading(true)
+        const docRef = doc(db, 'productos', prodId)
+        getDoc(docRef)
+        .then((doc)=>{
+            setItem({
+                id: doc.id,
+                ...doc.data()
+            })
+        })
+        .finally(()=>{
+            setLoading(false)
+        })
+     },[prodId])   
     return (
         <div>
             {

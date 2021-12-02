@@ -351,7 +351,7 @@ Menu
   text-indent: -9999em;
   margin: 50% auto;
   margin-top: 10rem;
-  margin-left: 35rem;
+  margin-left: 40rem;
   position: relative;
   font-size: 3rem;
   -webkit-transform: translateZ(0);
@@ -360,6 +360,7 @@ Menu
   -webkit-animation-delay: -0.16s;
   animation-delay: -0.16s;
 }
+
 .loader:before,
 .loader:after {
   position: absolute;
