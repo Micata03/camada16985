@@ -1,7 +1,10 @@
 import React from 'react'
+import {useGlobalContext} from '../Context/SideCartContext'
 
 
 function ItemCount({max, id, setCantidad, cantidad, onAdd}) {
+
+    const { openSidebar } = useGlobalContext();
 
    
     

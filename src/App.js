@@ -7,15 +7,18 @@ import {BrowserRouter, Route, Routes, Navigate} from 'react-router-dom'
 import ItemDetailContainer from './Componentes/ItemDetailContainer/ItemDetailContainer';
 import { CartProvider } from './Componentes/Context/CartContext';
 import { CartContainer } from './Componentes/CartContainer/CartContainer';
-import Nosotros from './Componentes/Nosotros';
+import Nosotros from './pages/nosotros/Nosotros';
 import { AppProvider } from './Componentes/Context/SideCartContext';
 import SideCart from './Componentes/SideCart/SideCart'
+import { MisionProvider } from './Componentes/Context/MisionContext';
+import CheckOut from './Componentes/checkout/CheckOut';
 
 function App() {
   return (
 
     <CartProvider>
       <AppProvider>
+        <MisionProvider>
      
      <BrowserRouter className="container">
         <NavBar/>
@@ -27,6 +30,7 @@ function App() {
         <Route path="*" element={<Navigate to ="/"/>}/>
         <Route path="/cart" element={<CartContainer/>}/>
         <Route path="/nosotros" element={<Nosotros/>}/>
+        <Route path="/checkout" element={<CheckOut/>}/>
 
     
       
@@ -43,6 +47,7 @@ function App() {
     
     
     </BrowserRouter>
+    </MisionProvider>
     </AppProvider>
     </CartProvider>
   );

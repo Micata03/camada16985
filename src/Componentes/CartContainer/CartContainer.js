@@ -6,7 +6,7 @@ import { CartItem } from './CartItem'
 export const CartContainer = () => {
 
     const {carrito, vaciarCarrito, totalCompra} = useContext(CartContext)
-    console.log(totalCompra())
+   
 
     if(carrito.length === 0){
         return (
@@ -47,7 +47,8 @@ export const CartContainer = () => {
         >
           vaciar carrito
         </button>
-        <button className="btn btn-dark mx-3">Terminar mi compra</button>
+        <Link to="/checkout" className="btn btn-dark mx-3">Terminar mi compra </Link>
+        
         <Link to="/productos" className=" nav-link">Seguir comprando</Link>
       </footer>
    

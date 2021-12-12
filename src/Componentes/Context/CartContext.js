@@ -1,4 +1,5 @@
 import React, { createContext, useState } from 'react'
+import Swal from 'sweetalert2'
 
 export const CartContext = createContext()
 
@@ -25,7 +26,13 @@ export const CartProvider = ( {children} ) => {
       
       newCart[x].cantidad < newCart[x].stock ? 
       newCart[x].cantidad = newCart[x].cantidad + 1 :
-      alert('No hay stock');
+      Swal.fire({
+        title: 'Error!',
+        text: 'No hay suficiente stock',
+        icon: 'error',
+        confirmButtonText: 'Ok'
+      })
+      //alert('No hay stock');
     
         
       

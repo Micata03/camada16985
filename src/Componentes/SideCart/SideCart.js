@@ -4,6 +4,7 @@ import {useGlobalContext} from '../Context/SideCartContext'
 import { FaTimes } from 'react-icons/fa';
 import { CartContext } from '../Context/CartContext'
 import { Link } from 'react-router-dom';
+import {FaShoppingCart} from 'react-icons/fa'
 
 
 
@@ -11,7 +12,7 @@ import { Link } from 'react-router-dom';
 const SideCart = () => {
   const { isSidebarOpen, closeSidebar } = useGlobalContext();
   const {carrito,  totalCompra} = useContext(CartContext)
-  console.log(carrito)
+ 
 
 
   return (
@@ -43,7 +44,10 @@ const SideCart = () => {
           <h4>
             total: $: {totalCompra()}
           </h4>
-          <Link to="/cart" className="filter-btn " onClick={closeSidebar}>Finalizar Compra</Link>
+          <Link to="/cart" className="filter-btn " onClick={closeSidebar}>
+            <FaShoppingCart className="mx-2"/>
+            Finalizar Compra
+            </Link>
         </div>
         
         

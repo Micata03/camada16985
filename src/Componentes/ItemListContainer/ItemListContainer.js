@@ -1,16 +1,19 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useContext} from 'react'
 import {useParams} from 'react-router-dom'
 import ItemList from '../ItemList/ItemList';
 import { Link } from 'react-router-dom';
 //import productos from '../../data';
-import {collection, getDocs, query, where} from 'firebase/firestore/lite';
+import {collection, getDocs, query, where,orderBy} from 'firebase/firestore/lite';
 import {db} from '../firebase/config'
 import Loading from '../Loading';
+import Caracteristicas from '../../pages/nosotros/Caracteristicas';
+import { MisionContext } from '../Context/MisionContext';
 
 //const allCategories = [...new Set(productos.map(item =>item.category))];
 
 
 export default function ItemListContainer() {
+    const { imgs} = useContext(MisionContext)
 
     const {catId} = useParams();
     const [productos, setProductos] = useState([])
@@ -62,7 +65,9 @@ export default function ItemListContainer() {
 
       {loading ? <Loading/> : <ItemList productos ={productos} id={catId}/>}
             
-            
+         <div className="section about-section" >
+             <Caracteristicas imgs={imgs}/>
+         </div>
             
         </section>
     )

@@ -10,7 +10,7 @@ export default function CartWidget({boton}) {
   const {totalCantidad, carrito} = useContext(CartContext)
  
    const open = ()=>{
-     if(window.location.href !== 'http://localhost:3000/cart'){
+     if(window.location.href !== 'http://localhost:3000/cart' ){
        boton()
      }
    }
