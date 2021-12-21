@@ -3,7 +3,7 @@ import ItemDetail from '../ItemDetail/ItemDetail'
 //import productos from '../../data';
 import Loading from '../Loading';
 import {useParams} from 'react-router-dom'
-import {doc, getDoc, query, where} from 'firebase/firestore/lite';
+import {doc, getDoc} from 'firebase/firestore/lite';
 import {db} from '../firebase/config'
 
 function ItemDetailContainer() {

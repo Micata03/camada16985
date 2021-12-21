@@ -2,10 +2,12 @@ import React, {useContext, useState} from 'react'
 import {Link} from 'react-router-dom'
 import ItemCount from '../ItemCount/ItemCount'
 import {CartContext}  from '../Context/CartContext'
+import {useGlobalContext} from '../Context/SideCartContext'
 
 function ItemDetail({id, name, category, price, desc, img, stock}) {
 
     const {agregarAlCarrito, isInCart} = useContext(CartContext)
+    const { openSidebar } = useGlobalContext();
 
     const [cantidad, setCantidad] = useState(0)
 
@@ -19,6 +21,8 @@ function ItemDetail({id, name, category, price, desc, img, stock}) {
                 cantidad,
                 stock
             })
+            openSidebar()
+            
         }   
     }
 

@@ -1,5 +1,5 @@
-import React, {useContext, useState, useEffect, createContext} from "react";
-import {docs, getDocs, collection} from 'firebase/firestore/lite';
+import React, { useState, useEffect, createContext} from "react";
+import { getDocs, collection} from 'firebase/firestore/lite';
 import {db} from '../../Componentes/firebase/config'
 
 export const MisionContext = createContext()

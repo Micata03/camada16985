@@ -13,7 +13,7 @@ export const CartProvider = ( {children} ) => {
       setCarrito( [...carrito, item] )
     }
 
-    console.log(carrito)
+    
 
     
     const removerDelCarrito = (id) => {

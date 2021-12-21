@@ -3,7 +3,7 @@ import {useParams} from 'react-router-dom'
 import ItemList from '../ItemList/ItemList';
 import { Link } from 'react-router-dom';
 //import productos from '../../data';
-import {collection, getDocs, query, where,orderBy} from 'firebase/firestore/lite';
+import {collection, getDocs, query, where} from 'firebase/firestore/lite';
 import {db} from '../firebase/config'
 import Loading from '../Loading';
 import Caracteristicas from '../../pages/nosotros/Caracteristicas';
