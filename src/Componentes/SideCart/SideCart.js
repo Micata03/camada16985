@@ -41,11 +41,11 @@ const SideCart = () => {
         })}
         <div className='cart-total'>
             <hr/>
-          <h4>
+          <h4 className='mx-3'>
             total: $: {totalCompra()}
           </h4>
-          <Link to="/cart" className="filter-btn " onClick={closeSidebar}>
-            <FaShoppingCart className="mx-2"/>
+          <Link to="/cart" className="filter-btn mt-4 px-3 " onClick={closeSidebar}>
+            <FaShoppingCart className='mx-2'/>
             Finalizar Compra
             </Link>
         </div>

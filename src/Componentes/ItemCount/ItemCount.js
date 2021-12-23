@@ -30,14 +30,14 @@ function ItemCount({max, id, setCantidad, cantidad, onAdd}) {
         <>
         <div className="container">
             <button className="btn btn-dark mx-3"  onClick={rest}
-            //disabled={count === inicial? true : null}
+            
             
             
             >-</button>
             <button className="btn btn-light">{cantidad}</button>
             
             <button className="btn btn-dark mx-3"  onClick={add}
-            //disabled={count === stock? true : null}
+            
             
             >+</button>
             

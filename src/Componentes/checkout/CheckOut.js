@@ -1,5 +1,5 @@
 import { Formik } from 'formik'
-import React, { useContext, useState } from 'react'
+import React, { useContext} from 'react'
 import { CartContext } from '../Context/CartContext'
 import * as Yup from 'yup';
 
@@ -18,7 +18,8 @@ const schema = Yup.object().shape({
                 .max(20, 'demasiado largo'),  
     email: Yup.string()
                 .email('Email invalido')
-                .required('Este campo es obligatorio')
+                .required('Este campo es obligatorio'),
+              
                                       
 })
 
@@ -29,7 +30,8 @@ function CheckOut() {
     const initialValues = {
        nombre: '',
         apellido: '',
-        email: ''
+        email: '',
+        
 }
     
 
@@ -40,12 +42,12 @@ function CheckOut() {
     return (
 
         <>
-        {carrito.legth === 0 ? <Navigate to="/"/> : 
+        {carrito.length === 0 ? <Navigate to="/"/> : 
         
         
         
         
-        <div className="container my-4 about-section">
+        <div className="container my-4  mt-4  "style={{height:"60vh"}}>
             <h2>Resumen de compra</h2>
             <hr/>
 
@@ -59,7 +61,7 @@ function CheckOut() {
             >
                 {(formik)=>(
 
-                    <form className="container m-5" onSubmit={formik.handleSubmit}>
+                    <form className="container" onSubmit={formik.handleSubmit}>
             <input
                 onChange={formik.handleChange}
                 name="nombre"
@@ -89,6 +91,7 @@ function CheckOut() {
                 placeholder="email"
             />
             {formik.errors.email && <small>{formik.errors.email}</small>}
+            
 
             <button type="submit" className="btn btn-primary">Enviar</button>
         </form>

@@ -11,7 +11,7 @@ export const CartContainer = () => {
     if(carrito.length === 0){
         return (
             <section className='cart'>
-              {/* cart header */}
+             
               <header>
                 <h2>Tu Carrito</h2>
                 <h4 className='empty-cart'>Esta vacio</h4>
@@ -24,15 +24,15 @@ export const CartContainer = () => {
 
     return (
         <div className="cart">
-            {/* cart header */}
+            
       <header>
         <h2>Tu carrito</h2>
       </header>
-      {/* cart items */}
+     
       <div>
         {carrito.map((prod) => <CartItem {...prod}/>)}
       </div>
-      {/* cart footer */}
+      
       <footer>
         <hr />
         <div className='cart-total'>

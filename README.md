@@ -1,12 +1,9 @@
 <h1 >Repositorio Proyecto curso REACT JS de CoderHouse</h1>
 
-<h3>Tienda de productos Veganos realizada con ReactJs, consume datos de un archivo propio. Estilizada con Bootstrap. Diseño propio (En proceso)</h3>
+<h3>Tienda de productos Veganos </h3>
 
-<h4>npm install</h4>
-<h4>npm install react-icons --save</h4>
-<h4>npm i react-router-dom</h4>
-<h4>npm i bootstrap</h4>
-<h4>npm start</h4>
+<h4>Se utilizo React JS, Boostrap, React Icons, Firebase, Formik</h4>
+
 
 
 

@@ -32,18 +32,14 @@ export const CartProvider = ( {children} ) => {
         icon: 'error',
         confirmButtonText: 'Ok'
       })
-      //alert('No hay stock');
-    
-        
-      
-      
-      setCarrito(newCart)   
-      
+      setCarrito(newCart)
+    }      
+     
       
       
       
               
-              } 
+               
 
     const restCantidadProducto = (id) => {
              

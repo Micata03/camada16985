@@ -19,13 +19,13 @@ const AppProvider = ({ children }) => {
     <SideCartContext.Provider
       value={{
         isSidebarOpen,
-        
-        
-        
-        openSidebar,
+           openSidebar,
         closeSidebar,
       }}
     >
+        
+        
+     
       {children}
     </SideCartContext.Provider>
   );
