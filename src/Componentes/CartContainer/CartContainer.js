@@ -49,7 +49,7 @@ export const CartContainer = () => {
         </button>
         <Link to="/checkout" className="btn btn-dark mx-3">Terminar mi compra </Link>
         
-        <Link to="/productos" className=" nav-link">Seguir comprando</Link>
+        <Link to="/" className=" nav-link">Seguir comprando</Link>
       </footer>
    
   
